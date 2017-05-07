@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <div class="topicContainer">
+    <div class="topic-container">
       <span class="topic" v-for="word in words">{{word}}</span>
     </div>
     <div class="title">
@@ -17,19 +17,19 @@
         <span>{{ commentCount }} 条评论</span>
       </div>
       <div class="col-xs-4">
-        <button class="btn">＋ 关注</button>
+        <button @click="follow" class="btn" :class="{ followed: isFollowed, noFollow: !isFollowed}">{{ followText }}</button>
       </div>
     </div>
-    <div class="row answerDiv">
+    <div class="row answer-div">
       <div class="col-xs-6 answer" style="border-right: solid; border-width: 1px; border-color: #dddddd;">
-        <span class="answerBtn">邀请回答</span>
+        <span class="answer-btn">邀请回答</span>
       </div>
       <div class="col-xs-6 answer">
-        <span class="answerBtn">添加回答</span>
+        <span class="answer-btn">添加回答</span>
       </div>
     </div>
-    <div class="row countDiv">
-      <div class="col-xs-6 answerCount">
+    <div class="row count-div">
+      <div class="col-xs-6 answer-count">
         <span>{{ answerCount }}个回答</span>
       </div>
     </div>
@@ -48,7 +48,20 @@
         questionDesc: '今日iOS版微信公众平台的赞赏功能由于苹果的相关政策被关闭，假如有一天苹果手机不支持微信APP，你会怎么办？',
         followCount: 43215,
         commentCount: 2343,
-        answerCount: 31
+        answerCount: 31,
+        followText: '＋ 关注',
+        isFollowed: false
+      }
+    },
+    methods: {
+      follow () {
+        if (this.isFollowed) {
+          this.followText = '＋ 关注'
+          this.isFollowed = false
+        } else {
+          this.followText = '已关注'
+          this.isFollowed = true
+        }
       }
     }
   }
@@ -60,7 +73,6 @@
     font-size: 18px;
   }
   .tail {
-    /*display: flex;*/
     line-height: 40px;
     white-space: nowrap;
     padding-bottom: 5px;
@@ -71,29 +83,38 @@
     background-color: #EAF8FF;
     color: #698ebf;
   }
-  .topicContainer {
+  .topic-container {
     margin-top: 10px;
     margin-bottom: 10px;
   }
   .btn {
-    background-color: #0e7bef;
-    color: #fff;
+    width: 100%;
   }
   .answer {
     padding: 10px;
     text-align: center;
   }
-  .answerDiv {
-    border-top: solid;
-    border-width: 1px;
-    border-color: #dddddd;
+  .answer-div {
+    border-top: 1px solid #dddddd;
   }
-  .answerCount {
+  .answer-count {
     text-align: left;
   }
-  .countDiv {
+  .count-div {
     padding-top: 10px;
     background-color: #eeeeee;
-    /*padding-bottom: 10px;*/
+  }
+  .followed {
+    background-color: #979797;
+  }
+  .noFollow {
+    background-color: #0e7bef;
+    color: #fff;
+  }
+
+  .btn:focus,
+  .btn:hover {
+    color: #fff;
+    text-decoration: none;
   }
 </style>

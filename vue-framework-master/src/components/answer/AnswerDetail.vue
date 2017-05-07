@@ -9,10 +9,10 @@
         <span>{{ selfDesc }}</span>
       </div>
       <div class="col-xs-4">
-        <button class="btn right">＋ 关注</button>
+        <button class="btn right" @click="follow" :class="{ followed: isFollowed, noFollow: !isFollowed}">{{ followText }}</button>
       </div>
     </div>
-    <div class="answerContent">
+    <div class="answer-content">
       <p>{{ answerContent }}</p>
     </div>
     <div class="row bottom-btn">
@@ -48,7 +48,9 @@
         selfDesc: 'quality engineer',
         portraitImg: '/static/head.png',
         likeCount: 13,
-        isStar: false
+        isStar: false,
+        followText: '＋ 关注',
+        isFollowed: false
       }
     },
     methods: {
@@ -58,26 +60,49 @@
         } else {
           this.isStar = true
         }
+      },
+      follow () {
+        if (this.isFollowed) {
+          this.followText = '＋ 关注'
+          this.isFollowed = false
+        } else {
+          this.followText = '已关注'
+          this.isFollowed = true
+        }
       }
     }
   }
 </script>
 
 <style scoped>
+
+  .followed {
+    color: #fff;
+    background-color: #979797;
+    border: none;
+  }
+  .noFollow {
+    background-color: #fff;
+    color: #0e7bef;
+    border: 1px solid #0e7bef;
+
+  }
+
+  .btn:focus,
+  .btn:hover {
+    background-color: #fff;
+    color: #0e7bef;
+    text-decoration: none;
+  }
+
   .row {
-    border-bottom: solid;
-    border-width: 1px;
-    border-color: #eeeeee;
+    border-bottom: 1px solid #eeeeee;
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
   .btn {
-    background-color: #fff;
-    border: solid;
-    border-color: #0e7bef;
-    border-width: 1px;
-    color: #0e7bef;
+    width: 100%;
   }
 
   .right {
@@ -88,7 +113,7 @@
     white-space: nowrap;
   }
 
-  .answerContent {
+  .answer-content {
     margin-top: 10px;
   }
 
