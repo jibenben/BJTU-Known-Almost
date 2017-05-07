@@ -1,14 +1,14 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-2 protrait">
+      <div class="col-xs-2">
         <img class="img-circle head" :src="portraitImg"/>
       </div>
-      <div class="col-xs-2 author">
+      <div class="col-xs-6 author">
         <span>{{ author }}</span><br/>
         <span>{{ selfDesc }}</span>
       </div>
-      <div class="col-xs-8">
+      <div class="col-xs-4">
         <button class="btn right">＋ 关注</button>
       </div>
     </div>
@@ -17,36 +17,22 @@
     </div>
     <div class="row bottom-btn">
       <div class="col-xs-3">
-        <div class="icon-div">
-          <img class="icon" src="/static/bottom-button/thumb.png"/>
-        </div>
-        <div>
-          <span>赞同({{ likeCount }})</span>
-        </div>
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+        <span>赞同({{ likeCount }})</span>
       </div>
       <div class="col-xs-3">
-        <div class="icon-div">
-          <img class="icon" src="/static/bottom-button/clip.png"/>
-        </div>
-        <div>
-          <span>分享</span>
-        </div>
+        <span class="glyphicon glyphicon-share"></span>
+        <span>分享</span>
+      </div>
+      <div @click="star()" class="col-xs-3">
+        <span class="glyphicon" :class="{ 'glyphicon-star-empty' : isStar, 'glyphicon-star' : !isStar }"></span>
+        <span>加入收藏</span>
       </div>
       <div class="col-xs-3">
-        <div class="icon-div">
-          <img class="icon" src="/static/bottom-button/star.png"/>
-        </div>
-        <div>
-          <span>加入收藏</span>
-        </div>
-      </div>
-      <div class="col-xs-3">
-        <div class="icon-div">
-          <img class="icon" src="/static/bottom-button/message.png"/>
-        </div>
-        <div>
-          <router-link to="/comment/12332">评论</router-link>
-        </div>
+        <span class="glyphicon glyphicon-comment"></span>
+        <router-link to="/comment/12332">
+          <span>评论</span>
+        </router-link>
       </div>
     </div>
   </div>
@@ -61,7 +47,17 @@
         author: 'Jeff Cao',
         selfDesc: 'quality engineer',
         portraitImg: '/static/head.png',
-        likeCount: 13
+        likeCount: 13,
+        isStar: false
+      }
+    },
+    methods: {
+      star () {
+        if (this.isStar) {
+          this.isStar = false
+        } else {
+          this.isStar = true
+        }
       }
     }
   }
@@ -75,6 +71,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+
   .btn {
     background-color: #fff;
     border: solid;
@@ -82,19 +79,24 @@
     border-width: 1px;
     color: #0e7bef;
   }
+
   .right {
     float: right;
   }
+
   .author {
     white-space: nowrap;
   }
+
   .answerContent {
     margin-top: 10px;
   }
+
   .icon {
     width: 25px;
     height: 25px;
   }
+
   .bottom-btn {
     border-top: solid;
     border-width: 1px;
@@ -102,11 +104,21 @@
     text-align: center;
     font-size: 13px;
   }
+
   .row {
     padding-top: 5px;
     padding-bottom: 5px;
   }
+
   .icon-div {
     padding-bottom: 2px;
+  }
+
+  span {
+    white-space: nowrap;
+  }
+
+  .glyphicon {
+    font-size: 24px;
   }
 </style>

@@ -4,8 +4,8 @@
       <div class="col-xs-2">
         <span @click="back" class="glyphicon glyphicon-menu-left"></span>
       </div>
-      <div class="col-xs-10">
-        <span>{{ questionTitle }}</span>
+      <div class="col-xs-8 headline">
+        <span>{{ headline }}</span>
       </div>
     </div>
   </div>
@@ -13,12 +13,8 @@
 
 <script>
   export default {
-    name: 'answerHeader',
-    data () {
-      return {
-        questionTitle: '微信和苹果，你会选择哪一个？'
-      }
-    },
+    name: 'commonHeader',
+    props: ['headline'],
     methods: {
       back () {
         window.history.back()
@@ -29,11 +25,16 @@
 
 <style scoped>
   .container-fluid {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: solid;
-    border-width: 1px;
-    border-color: #eeeeee;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: solid 1px #eeeeee;
   }
-
+  .headline {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .glyphicon {
+    font-size: 20px;
+  }
 </style>

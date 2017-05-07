@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-2 protrait">
+      <div class="col-xs-2">
         <img class="img-circle head" :src="portraitImg"/>
       </div>
       <div class="col-xs-10 right">
@@ -51,12 +51,12 @@
     white-space: nowrap;
   }
   .right {
-    border-bottom: solid;
-    border-width: 1px;
-    border-color: #eeeeee;
+    border-bottom: solid 1px #eeeeee;
     padding-bottom: 5px;
+    padding-left: 0;
   }
   p {
+    padding-top: 5px;
     margin-bottom: 5px;
   }
 </style>

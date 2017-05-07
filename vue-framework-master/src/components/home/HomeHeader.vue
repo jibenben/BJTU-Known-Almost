@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'searchHeader',
+    name: 'homeHeader',
     data () {
       return {
         keyword: ''

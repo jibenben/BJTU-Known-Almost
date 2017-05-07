@@ -2,13 +2,13 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-2">
-        <img @click="back" class="back" src="/static/back.png" width="15px" height="20px"/>
+        <span @click="back" class="glyphicon glyphicon-menu-left"></span>
       </div>
       <div class="col-xs-8">
         <input v-model="keyword" type="text" class="form-control" placeholder="搜索"/>
       </div>
       <div class="col-xs-2">
-        <img class="share" src="/static/share.png" width="20px" height="25px"/>
+        <span @click="back" class="glyphicon glyphicon-share"></span>
       </div>
     </div>
   </div>
@@ -27,31 +27,30 @@
 
 <style scoped>
   .container-fluid {
-    padding: 5px 0 5px 0;
-    border-bottom: solid;
-    border-width: 1px;
-    border-color: #eeeeee;
-  }
-  .col-xs-2 {
+    border-bottom: solid 1px #eeeeee;
     padding: 0;
-    margin: 0;
-    display: flex;
   }
+
+  .row {
+     margin: 5px 0 5px 0;
+   }
+
+  .form-control {
+    height: 24px;
+  }
+
   .col-xs-8 {
     padding: 0;
   }
-  .back {
-    margin-top: 7px;
-    margin-left: 30px;
-  }
-  .share {
-    margin-left: 15px;
-    margin-top: 5px;
-  }
+
   input:-ms-input-placeholder{
     text-align: center;
   }
   input::-webkit-input-placeholder{
     text-align: center;
+  }
+
+  .glyphicon {
+    font-size: 20px;
   }
 </style>

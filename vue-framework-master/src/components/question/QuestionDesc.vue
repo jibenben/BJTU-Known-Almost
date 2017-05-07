@@ -10,13 +10,13 @@
       <p>{{ questionDesc }}</p>
     </div>
     <div class="row tail">
-      <div class="col-xs-3">
+      <div class="col-xs-4">
         <span>{{ followCount }} 人关注</span>
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-4">
         <span>{{ commentCount }} 条评论</span>
       </div>
-      <div class="col-xs-6">
+      <div class="col-xs-4">
         <button class="btn">＋ 关注</button>
       </div>
     </div>
@@ -60,8 +60,10 @@
     font-size: 18px;
   }
   .tail {
+    /*display: flex;*/
     line-height: 40px;
     white-space: nowrap;
+    padding-bottom: 5px;
   }
   .topic {
     margin-right: 10px;
@@ -74,9 +76,6 @@
     margin-bottom: 10px;
   }
   .btn {
-    float: right;
-    padding-left: 20px;
-    padding-right: 20px;
     background-color: #0e7bef;
     color: #fff;
   }

@@ -1,26 +1,25 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-2 protrait">
+      <div class="col-xs-2">
         <img class="img-circle head" :src="portraitImg"/>
       </div>
-      <div class="col-xs-2 author">
+      <div class="col-xs-3 author">
         <p>{{ author }}</p>
       </div>
     </div>
     <div>
-    </div>
-    <div>
       <router-link to="/answer/12343">{{ abstract }}</router-link>
     </div>
+
     <div class="row tail">
-      <div class="col-xs-3">
+      <div class="col-xs-4">
         <p>{{ likeCount }} 赞同</p>
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-4">
         <router-link to="/comment/123123">{{ commentCount }} 评论</router-link>
       </div>
-      <div class="col-xs-6">
+      <div class="col-xs-4">
         <span>{{ answerTime }}</span>
       </div>
     </div>
@@ -60,12 +59,13 @@
     padding-bottom: 2%;
     margin-top: 2%;
   }
-  .head {
-    width: 40px;
-    height: 40px;
+
+  .content {
+    margin-bottom: 5px;
   }
+
   .author {
-    line-height: 40px;
+    line-height: 30px;
     white-space: nowrap;
   }
   .title {
@@ -85,6 +85,7 @@
     height: 150px;
   }
   .tail {
+    margin-top: 5px;
     color: #aaaaaa;
   }
 </style>

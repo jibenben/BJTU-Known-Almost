@@ -1,17 +1,21 @@
 <template>
   <div>
-    <search-header></search-header>
-    <home-content></home-content>
+    <home-header></home-header>
+    <question-item></question-item>
+    <question-item></question-item>
+    <question-item></question-item>
+    <question-item></question-item>
+    <question-item></question-item>
   </div>
 </template>
 
 <script>
-  import HomeContent from './HomeContent'
-  import SearchHeader from '../search/SearchHeader'
+  import HomeHeader from './HomeHeader'
+  import QuestionItem from '../question/QuestionItem'
   export default {
     components: {
-      SearchHeader,
-      HomeContent
+      QuestionItem,
+      HomeHeader
     },
     name: 'home'
   }

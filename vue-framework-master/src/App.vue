@@ -13,7 +13,7 @@
 
 <style scoped>
   @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-  @import "style/style.css";
+  @import "assets/style/basic.css";
 
   body {
     margin: 0px;

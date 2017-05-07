@@ -2,13 +2,13 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-2">
-        <img @click="back" class="back" src="/static/back.png" width="15px" height="20px"/>
+        <span @click="back" class="glyphicon glyphicon-menu-left"></span>
       </div>
       <div class="col-xs-8 headline">
-        <p>评论</p>
+        <span>评论</span>
       </div>
       <div class="col-xs-2">
-        <img src="/static/sort.png" width="32px" height="30px"/>
+        <span class="glyphicon glyphicon-sort-by-attributes-alt"></span>
       </div>
     </div>
   </div>
@@ -35,13 +35,13 @@
   }
   .headline {
     text-align: center;
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 400;
   }
-  p {
-    margin: 0;
+  .glyphicon {
+    font-size: 22px;
   }
   .back {
-    margin-top: 5px;
+    /*margin-top: 5px;*/
   }
 </style>
