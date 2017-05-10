@@ -31,10 +31,10 @@
   }
   .headline {
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
   }
-  .glyphicon {
-    font-size: 20px;
+  .glyphicon-menu-left {
+    font-size: 18px;
   }
 </style>

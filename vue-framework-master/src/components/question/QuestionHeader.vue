@@ -1,15 +1,19 @@
 <template>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-2">
-        <span @click="back" class="glyphicon glyphicon-menu-left"></span>
+    <nav class="navbar-default navbar-fixed-top">
+      <div class="row">
+        <div class="col-xs-2">
+          <span @click="back" class="glyphicon glyphicon-menu-left"></span>
+        </div>
+        <div class="col-xs-8">
+          <input v-model="keyword" type="text" class="form-control" placeholder="搜索"/>
+        </div>
+        <div class="col-xs-2">
+          <span @click="back" class="glyphicon glyphicon-share"></span>
+        </div>
       </div>
-      <div class="col-xs-8">
-        <input v-model="keyword" type="text" class="form-control" placeholder="搜索"/>
-      </div>
-      <div class="col-xs-2">
-        <span @click="back" class="glyphicon glyphicon-share"></span>
-      </div>
+    </nav>
+    <div style="margin-top: 40px">
     </div>
   </div>
 </template>
@@ -26,14 +30,17 @@
 </script>
 
 <style scoped>
-  .container-fluid {
+  .navbar-default{
+    background-color: #fff;
     border-bottom: solid 1px #eeeeee;
+  }
+  .container-fluid {
     padding: 0;
   }
 
   .row {
-     margin: 5px 0 5px 0;
-   }
+    margin: 5px 0 5px 0;
+  }
 
   .form-control {
     height: 24px;
@@ -43,10 +50,11 @@
     padding: 0;
   }
 
-  input:-ms-input-placeholder{
+  input:-ms-input-placeholder {
     text-align: center;
   }
-  input::-webkit-input-placeholder{
+
+  input::-webkit-input-placeholder {
     text-align: center;
   }
 

@@ -58,5 +58,10 @@
   p {
     padding-top: 5px;
     margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .row {
+    font-size: 12px;
   }
 </style>

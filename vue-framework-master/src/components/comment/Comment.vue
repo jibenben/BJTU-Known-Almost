@@ -6,6 +6,9 @@
     <comment-item></comment-item>
     <comment-item></comment-item>
     <comment-item></comment-item>
+    <comment-item></comment-item>
+    <comment-item></comment-item>
+    <comment-item></comment-item>
   </div>
 </template>
 

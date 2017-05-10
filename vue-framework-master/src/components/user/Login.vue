@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="item">
         <label>请输入用户名：</label>
-        <input class="form-control" ref="username" type="text" placeholder="请输入用户名"/>
+        <input class="form-control" ref="username" type="text" placeholder="请输入用户名/注册邮箱"/>
       </div>
       <div class="item">
         <label>请输入密码：</label>
@@ -59,6 +59,7 @@
   }
 
   label {
+    font-weight: normal;
     margin-bottom: 20px;
   }
 </style>

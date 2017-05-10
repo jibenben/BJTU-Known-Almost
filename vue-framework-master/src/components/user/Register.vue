@@ -56,7 +56,7 @@
 
 <style scoped>
   .item {
-    margin: 10px 0 10px 0;
+    margin: 10px 0 20px 0;
   }
   label {
     color: #0e7bef;
