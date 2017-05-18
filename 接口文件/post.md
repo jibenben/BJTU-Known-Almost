@@ -4,6 +4,7 @@
 | ------- | ---- | ---- | ------- | ---------- |
 | topicid | 话题选择 | post | int     | 1          |
 | content | 问题描述 | post | string  | 交大附近比较好的环境 |
+| title   | 问题标题 | post | string  | 附近美食       |
 | uid     | 用户   | post | id      | 2          |
 | 输出参数    |      |      |         |            |
 | result  | 发帖结果 | json | boolean | true/fals  |
