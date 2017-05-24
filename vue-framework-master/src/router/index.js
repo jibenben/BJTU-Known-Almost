@@ -9,7 +9,9 @@ import Answer from '../components/answer/Answer.vue'
 import Comment from '../components/comment/Comment.vue'
 import Login from '../components/user/Login.vue'
 import Register from '../components/user/Register.vue'
-
+import AskTitle from '../components/ask/AskTitle.vue'
+import AskDetail from '../components/ask/AskDetail.vue'
+import AskTopic from '../components/ask/AskTopic.vue'
 Vue.use(VueRouter)
 
 export default new VueRouter({
@@ -45,6 +47,21 @@ export default new VueRouter({
       path: '/register',
       name: 'register',
       component: Register
+    },
+    {
+      path: '/ask/title',
+      name: 'askTitle',
+      component: AskTitle
+    },
+    {
+      path: '/ask/detail',
+      name: 'askDetail',
+      component: AskDetail
+    },
+    {
+      path: '/ask/topic',
+      name: 'askTopic',
+      component: AskTopic
     }
   ]
 })

@@ -8,24 +8,24 @@
     <div v-for="q in questions" class="container-fluid">
       <div class="row">
         <div class="col-xs-2">
-          <img class="img-circle head" :src="q.topicurl"/>
+          <img class="img-circle head" :src="q.topicimage"/>
         </div>
         <div class="col-xs-8 theme">
           <span>来自话题：{{ q.topic }}</span>
         </div>
       </div>
       <div>
-        <router-link to="/question/11123" class="title">{{ q.content }}</router-link>
+        <router-link :to="{ name: 'question', params: { id: q.pid } }" class="title">{{ q.title }}</router-link>
       </div>
       <div>
         <img v-if="false" class="abImg" :src="abstractImg"/>
       </div>
       <div class="text">
-        <router-link to="/answer">{{ q.name }}：{{ q.answercontent }}</router-link>
+        <router-link :to="{ name: 'answer', params: { id: aid }}">{{ q.uname }}：{{ q.answercontent }}</router-link>
       </div>
       <div class="row tail">
         <div class="col-xs-4">
-          <span>{{ q.answerLikeNumber }} 赞同</span>
+          <span>{{ q.likeNumber }} 赞同</span>
         </div>
         <div class="col-xs-4">
           <router-link to="/comment">{{ }} 评论</router-link>
@@ -56,7 +56,8 @@
     },
     data () {
       return {
-        questions: []
+        questions: [],
+        aid: 1234
       }
     },
     methods: {
