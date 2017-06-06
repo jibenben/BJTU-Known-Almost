@@ -12,6 +12,7 @@ import Register from '../components/user/Register.vue'
 import AskTitle from '../components/ask/AskTitle.vue'
 import AskDetail from '../components/ask/AskDetail.vue'
 import AskTopic from '../components/ask/AskTopic.vue'
+import ToAnswer from '../components/toAnswer/toAnswer.vue'
 Vue.use(VueRouter)
 
 export default new VueRouter({
@@ -62,6 +63,11 @@ export default new VueRouter({
       path: '/ask/topic',
       name: 'askTopic',
       component: AskTopic
+    },
+    {
+      path: '/toAnswer',
+      name: 'toAnswer',
+      component: ToAnswer
     }
   ]
 })

@@ -45,7 +45,9 @@
           <span class="answer-btn">邀请回答</span>
         </div>
         <div class="col-xs-6 desc-answer">
-          <span class="answer-btn">添加回答</span>
+          <router-link to="/toAnswer">
+            <span class="answer-btn">添加回答</span>
+          </router-link>
         </div>
       </div>
       <div class="row count-div">

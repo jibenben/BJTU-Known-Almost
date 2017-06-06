@@ -9,7 +9,7 @@
       </div>
     </div>
     <div>
-      <textarea placeholder="请填写问题相关描述信息（选填）" class="form-control"></textarea>
+      <textarea placeholder="请填写问题相关描述信息（选填）" class="form-control" rows="10"></textarea>
     </div>
   </div>
 </template>
