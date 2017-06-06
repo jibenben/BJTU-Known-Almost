@@ -1,0 +1,51 @@
+[ 2017-05-12T17:16:50+08:00 ] ::1 /BJTU/index.php/home/index/sendMail
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001183s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002783s ]
+ERR: 参数错误或者未定义:to
+
+[ 2017-05-12T18:49:52+08:00 ] ::1 /BJTU/index.php/home/index/sendMail
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001515s ]
+ERR: 参数错误或者未定义:to
+
+[ 2017-05-12T18:50:27+08:00 ] ::1 /BJTU/index.php/home/index/sendMail
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001876s ]
+NOTIC: [2] require_once(./Plugin/phpmailer/class.phpmailer.php): failed to open stream: No such file or directory H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 31 行.
+
+[ 2017-05-12T18:50:31+08:00 ] ::1 /BJTU/index.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002141s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003683s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.014770s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.011695s ]
+SQL: select type ,pid, content,name ,createtime from 
+                  user_post ,user,post 
+                  where post.id=user_post.pid 
+                  and user.id=user_post.uid; [ RunTime:0.006154s ]
+SQL: select answer.content ,likeNumber from answer,post_answer 
+                    where answer.id= post_answer.anid 
+                  and post_answer.pid= 4 limit 0,1 [ RunTime:0.005645s ]
+SQL: select answer.content ,likeNumber from answer,post_answer 
+                    where answer.id= post_answer.anid 
+                  and post_answer.pid= 5 limit 0,1 [ RunTime:0.000703s ]
+SQL: select answer.content ,likeNumber from answer,post_answer 
+                    where answer.id= post_answer.anid 
+                  and post_answer.pid= 6 limit 0,1 [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.008178s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =0 ) LIMIT 1   [ RunTime:0.000496s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =0 ) LIMIT 1   [ RunTime:0.000599s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =0 ) LIMIT 1   [ RunTime:0.000447s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002950s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003113s ]
+
+[ 2017-05-12T18:52:21+08:00 ] ::1 /BJTU/index.php/home/index/sendMail
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000902s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001453s ]
+NOTIC: [2] require(./ThinkPHP/Library/Org/Nx/class.phpmailer.php): failed to open stream: No such file or directory H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 31 行.
+

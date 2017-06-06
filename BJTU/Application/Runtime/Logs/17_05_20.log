@@ -1,0 +1,357 @@
+[ 2017-05-20T14:28:09+08:00 ] ::1 /bjtu/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003334s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.004971s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.005445s ]
+SQL: select  id pid,createtime,followNumber,title,type from post; [ RunTime:0.000351s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001365s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001448s ]
+
+[ 2017-05-20T14:44:46+08:00 ] ::1 /bjtu/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001697s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.010853s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.008410s ]
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.006486s ]
+SQL: select  id pid,createtime,followNumber,title,type from post; [ RunTime:0.000365s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =4 [ RunTime:0.000660s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =5 [ RunTime:0.000536s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =6 [ RunTime:0.000487s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001090s ]
+
+[ 2017-05-20T14:45:18+08:00 ] ::1 /bjtu/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001459s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.005108s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.004823s ]
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.005050s ]
+SQL: select  id pid,createtime,followNumber,title,type from post; [ RunTime:0.000407s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =4 [ RunTime:0.000618s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =5 [ RunTime:0.000583s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =6 [ RunTime:0.000562s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001161s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001250s ]
+
+[ 2017-05-20T14:48:42+08:00 ] ::1 /bjtu/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000937s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001458s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.009489s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.008308s ]
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.007997s ]
+SQL: select  id pid,createtime,followNumber,title,type from post; [ RunTime:0.000661s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =4 [ RunTime:0.001045s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.009242s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =1 ) LIMIT 1   [ RunTime:0.000350s ]
+NOTIC: [8] Undefined index: tcontent H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 22 行.
+NOTIC: [8] Undefined index: tcontent H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 23 行.
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =5 [ RunTime:0.000525s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =3 ) LIMIT 1   [ RunTime:0.000309s ]
+NOTIC: [8] Undefined index: tcontent H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 22 行.
+NOTIC: [8] Undefined index: tcontent H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 23 行.
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =6 [ RunTime:0.000492s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =2 ) LIMIT 1   [ RunTime:0.000288s ]
+NOTIC: [8] Undefined index: tcontent H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 22 行.
+NOTIC: [8] Undefined index: tcontent H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 23 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000995s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001077s ]
+
+[ 2017-05-20T14:49:47+08:00 ] ::1 /bjtu/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000969s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001478s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.003996s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.003975s ]
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.004275s ]
+SQL: select  id pid,createtime,followNumber,title,type from post; [ RunTime:0.000395s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =4 [ RunTime:0.000631s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.003787s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =1 ) LIMIT 1   [ RunTime:0.000310s ]
+NOTIC: [8] Undefined index: tcontent H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 23 行.
+NOTIC: [8] Undefined index: tcontent H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 24 行.
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =5 [ RunTime:0.000552s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =3 ) LIMIT 1   [ RunTime:0.000272s ]
+NOTIC: [8] Undefined index: tcontent H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 23 行.
+NOTIC: [8] Undefined index: tcontent H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 24 行.
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =6 [ RunTime:0.000437s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =2 ) LIMIT 1   [ RunTime:0.000259s ]
+NOTIC: [8] Undefined index: tcontent H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 23 行.
+NOTIC: [8] Undefined index: tcontent H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 24 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000907s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000973s ]
+
+[ 2017-05-20T14:50:20+08:00 ] ::1 /bjtu/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001280s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.004293s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.003715s ]
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.003629s ]
+SQL: select  id pid,createtime,followNumber,title,type from post; [ RunTime:0.000294s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =4 [ RunTime:0.000442s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.003745s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =1 ) LIMIT 1   [ RunTime:0.000288s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =5 [ RunTime:0.000449s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =3 ) LIMIT 1   [ RunTime:0.000240s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =6 [ RunTime:0.000458s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =2 ) LIMIT 1   [ RunTime:0.000269s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000781s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000850s ]
+
+[ 2017-05-20T14:55:29+08:00 ] ::1 /bjtu/index.php/home/index/search
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001433s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.006458s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.004591s ]
+SQL: SELECT * FROM `post` WHERE ( title like '%美食%' ) LIMIT 1   [ RunTime:0.000468s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001181s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001272s ]
+
+[ 2017-05-20T14:56:49+08:00 ] ::1 /bjtu/index.php/home/index/search
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001427s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.005875s ]
+SQL: select id pid,title ,followeNumber from post where title like '%美食%' [ RunTime:0.000320s ]
+ERR: 1054:Unknown column 'followeNumber' in 'field list'
+ [ SQL语句 ] : select id pid,title ,followeNumber from post where title like '%美食%'
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001438s ]
+
+[ 2017-05-20T14:57:00+08:00 ] ::1 /bjtu/index.php/home/index/search
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001142s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.007912s ]
+SQL: select id pid,title ,followeNumber from post where title like '%美食%' [ RunTime:0.000386s ]
+ERR: 1054:Unknown column 'followeNumber' in 'field list'
+ [ SQL语句 ] : select id pid,title ,followeNumber from post where title like '%美食%'
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001181s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001291s ]
+
+[ 2017-05-20T14:57:17+08:00 ] ::1 /bjtu/index.php/home/index/search
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000691s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001141s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.009234s ]
+SQL: select id pid,title ,followeNumber from post where title like '%美食%' [ RunTime:0.000470s ]
+ERR: 1054:Unknown column 'followeNumber' in 'field list'
+ [ SQL语句 ] : select id pid,title ,followeNumber from post where title like '%美食%'
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.003482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003631s ]
+
+[ 2017-05-20T14:58:06+08:00 ] ::1 /bjtu/index.php/home/index/search?key=%E7%BE%8E%E9%A3%9F
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001822s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.009443s ]
+SQL: select id pid,title ,followeNumber from post where title like '%美食%' [ RunTime:0.000494s ]
+ERR: 1054:Unknown column 'followeNumber' in 'field list'
+ [ SQL语句 ] : select id pid,title ,followeNumber from post where title like '%美食%'
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002022s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002206s ]
+
+[ 2017-05-20T14:58:26+08:00 ] ::1 /bjtu/index.php/home/index/search?key=%E7%BE%8E%E9%A3%9F
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000860s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001387s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.008905s ]
+SQL: select id pid,title ,followeNumber from post where title like '%美食%' [ RunTime:0.000543s ]
+ERR: 1054:Unknown column 'followeNumber' in 'field list'
+ [ SQL语句 ] : select id pid,title ,followeNumber from post where title like '%美食%'
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.003060s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003227s ]
+
+[ 2017-05-20T14:59:04+08:00 ] ::1 /bjtu/index.php/home/index/search?key=%E7%BE%8E%E9%A3%9F
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001181s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.005046s ]
+SQL: select id pid,title ,followeNumber from post where title like '%美食%' [ RunTime:0.000275s ]
+ERR: 1054:Unknown column 'followeNumber' in 'field list'
+ [ SQL语句 ] : select id pid,title ,followeNumber from post where title like '%美食%'
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000973s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001059s ]
+
+[ 2017-05-20T15:00:12+08:00 ] ::1 /bjtu/index.php/home/index/search?key=%E7%BE%8E%E9%A3%9F
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001167s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.010868s ]
+SQL: select id pid,title ,followNumber from post where title like '%美食%' [ RunTime:0.000676s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001833s ]
+
+[ 2017-05-20T15:00:42+08:00 ] ::1 /bjtu/index.php/home/index/search?key=%E7%BE%8E%E9%A3%9F
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000904s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001418s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.010385s ]
+SQL: select id pid,title posttitle ,followNumber from post where title like '%美食%' [ RunTime:0.000849s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002191s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002381s ]
+
+[ 2017-05-20T15:01:07+08:00 ] ::1 /bjtu/index.php/home/index/search
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001153s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.004597s ]
+SQL: select id pid,title posttitle ,followNumber from post where title like '%美食%' [ RunTime:0.000308s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000888s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000976s ]
+
+[ 2017-05-20T15:13:21+08:00 ] ::1 /bjtu/index.php/home/index/detail
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000860s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001549s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.004417s ]
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.003770s ]
+SQL: select  post.ID pid,title posttitle ,content postcontent ,createtime postcreatetime ,name uname from 
+                    post,user_post,user where post.id =5 
+                    and post.id =user_post.pid 
+                    and user.id =user_post.uid; [ RunTime:0.000409s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =5 [ RunTime:0.000482s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000878s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000953s ]
+
+[ 2017-05-20T15:25:40+08:00 ] ::1 /bjtu/index.php/home/index/detail
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000857s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001375s ]
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.004241s ]
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.004467s ]
+NOTIC: [8] Undefined index: pid H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 44 行.
+SQL: select  post.ID pid,title posttitle ,content postcontent ,createtime postcreatetime ,name uname from 
+                    post,user_post,user where post.id = 
+                    and post.id =user_post.pid 
+                    and user.id =user_post.uid; [ RunTime:0.000218s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and post.id =user_post.pid 
+                    and user.id =user_post.uid' at line 3
+ [ SQL语句 ] : select  post.ID pid,title posttitle ,content postcontent ,createtime postcreatetime ,name uname from 
+                    post,user_post,user where post.id = 
+                    and post.id =user_post.pid 
+                    and user.id =user_post.uid;
+NOTIC: [8] Undefined index: pid H:\phpStudy\WWW\BJTU\Application\Home\Controller\IndexController.class.php 第 45 行.
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid = [ RunTime:0.000212s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 4
+ [ SQL语句 ] : select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000897s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000964s ]
+
+[ 2017-05-20T15:26:03+08:00 ] ::1 /bjtu/index.php/home/index/dispalyAnswer
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000696s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001145s ]
+ERR: 非法操作:dispalyanswer
+
+[ 2017-05-20T15:26:05+08:00 ] ::1 /bjtu/index.php/home/index/dispalyAnswer
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000696s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001142s ]
+ERR: 非法操作:dispalyanswer
+
+[ 2017-05-20T15:26:33+08:00 ] ::1 /bjtu/index.php/home/index/displayAnswer
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001237s ]
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.004823s ]
+SQL: select  content answercontent  ,image uimage,
+likeNumber,CommentNumber ,answer.id anid,name uname ,user.id uid 
+from user,answer ,user_answer where
+ user.id =user_answer.uid and answer.id=user_answer.anid and answer.id =3; [ RunTime:0.001328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000961s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001048s ]
+
+[ 2017-05-20T20:28:06+08:00 ] ::1 /bjtu/index.php/home/index/displayComment
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001401s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002320s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.005776s ]
+SQL: SELECT comment.content commentcontent,user.name 
+              uname,user.id uid,user.image uimage 
+              FROM comment ,answer_comment,user,user_comment
+              where comment.id=answer_comment.coid and  
+              answer_comment.anid =1 and user.id=user_comment.uid
+              and comment.id = user_comment.coid; [ RunTime:0.002196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002158s ]
+

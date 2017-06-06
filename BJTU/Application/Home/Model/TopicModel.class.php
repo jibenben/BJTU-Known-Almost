@@ -14,5 +14,8 @@ class TopicModel  extends Model
     public function selectByPost($id){
         return M("topic")->where("tid =$id") ->find();
     }
+    public function index(){
+        return M("topic")->select();
+    }
 
 }
