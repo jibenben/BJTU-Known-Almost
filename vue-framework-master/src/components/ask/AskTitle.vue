@@ -5,11 +5,11 @@
         <a @click="cancel()">取消</a>
       </div>
       <div style="float: right;" class="menu">
-        <router-link to="/ask/detail">下一步</router-link>
+        <span @click="setTitle()">下一步</span>
       </div>
     </div>
     <div>
-      <textarea placeholder="请写下你的问题，并用问号结尾" class="form-control"></textarea>
+      <textarea placeholder="请写下你的问题，并用问号结尾" class="form-control" v-model="title"></textarea>
     </div>
   </div>
 </template>
@@ -29,14 +29,34 @@
   }
 </style>
 
-
 <script>
+  import { mapMutations, mapGetters } from 'vuex'
   export default {
     name: 'askQuestion',
     methods: {
+      ...mapMutations([
+        'setQTitle'
+      ]),
+      setTitle () {
+        this.setQTitle(this.title)
+        this.$router.push('/ask/detail')
+      },
       cancel () {
         window.history.back()
       }
+    },
+    mounted: function () {
+      this.title = this.qInfo.qTitle
+    },
+    data () {
+      return {
+        title: ''
+      }
+    },
+    computed: {
+      ...mapGetters([
+        'qInfo'
+      ])
     }
   }
 </script>

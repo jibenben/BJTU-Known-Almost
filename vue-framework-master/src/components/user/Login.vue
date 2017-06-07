@@ -4,11 +4,11 @@
     <div class="container-fluid">
       <div class="item">
         <label>请输入用户名：</label>
-        <input class="form-control" ref="username" type="text" placeholder="请输入用户名/注册邮箱"/>
+        <input v-model="uname" class="form-control" ref="username" type="text" placeholder="请输入用户名/注册邮箱"/>
       </div>
       <div class="item">
         <label>请输入密码：</label>
-        <input class="form-control" ref="password" type="password" placeholder="请输入密码"/>
+        <input v-model="passwd" class="form-control" ref="password" type="password" placeholder="请输入密码"/>
       </div>
       <div class="item">
         <button @click="login()" class="btn btn-default btn-login">登录</button>
@@ -29,9 +29,24 @@
   export default {
     components: {CommonHeader},
     name: 'login',
+    data () {
+      return {
+        uname: '',
+        passwd: '',
+        result: ''
+      }
+    },
     methods: {
       login () {
-        return true
+        let formd = new window.FormData()
+        let local = this
+        formd.append('name', this.uname)
+        formd.append('password', this.passwd)
+        this.$http.post('http://139.199.5.64/BJTU/index.php/home/index/user/login', formd).then((response) => {
+          local.result = response.data
+          console.log(response)
+        }, (response) => {
+        })
       }
     }
   }

@@ -18,10 +18,10 @@
     <div class="container-content">
       <div class="row row-author">
         <div class="col-xs-2">
-          <img class="img-circle head" :src="answerData[0].uimage"/>
+          <img class="img-circle head" :src="answerData.uimage"/>
         </div>
         <div class="col-xs-6 author">
-          <label>{{ answerData[0].uname }}</label>
+          <label>{{ answerData.uname }}</label>
           <!--<br/>-->
           <!--<span>{{ selfDesc }}</span>-->
         </div>
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="answer-content">
-        <p>{{ answerData[0].answercontent }}</p>
+        <p>{{ answerData.answercontent }}</p>
       </div>
       <div style="margin-top: 80px"></div>
       <nav class="navbar-default navbar-fixed-bottom">
@@ -43,7 +43,7 @@
                 <span class="glyphicon glyphicon-thumbs-up"></span>
               </div>
               <div>
-                <span>赞同({{ answerData[0].likeNumber }})</span>
+                <span>赞同({{ answerData.likeNumber }})</span>
               </div>
             </div>
             <div class="col-xs-3">
@@ -68,7 +68,7 @@
               </div>
               <div>
                 <router-link :to="{ name: 'comment', params: { id: anid }}">
-                  <span>评论({{ answerData[0].CommentNumber }})</span>
+                  <span>评论({{ answerData.CommentNumber }})</span>
                 </router-link>
               </div>
             </div>
@@ -182,7 +182,7 @@
       formd.append('anid', this.anid)
       this.$http.post('http://139.199.5.64/bjtu/index.php/home/index/displayAnswer', formd).then((response) => {
         console.log(response)
-        local.answerData = response.data
+        local.answerData = response.data[0]
       }, (response) => {
       })
     },

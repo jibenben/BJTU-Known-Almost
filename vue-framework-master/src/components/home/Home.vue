@@ -21,7 +21,9 @@
         <img v-if="false" class="abImg" :src="abstractImg"/>
       </div>
       <div class="text">
-        <router-link :to="{ name: 'answer', params: { id: q.anid, questionTitle: q.title }}">{{ q.uname }}：{{ q.answercontent }}</router-link>
+        <router-link :to="{ name: 'answer', params: { id: q.anid, questionTitle: q.title }}">{{ q.uname
+          }}：{{ q.answercontent }}
+        </router-link>
       </div>
       <div class="row tail">
         <div class="col-xs-4">
@@ -135,8 +137,5 @@
     margin-top: 5px;
     color: #aaaaaa;
     white-space: nowrap;
-  }
-  .row {
-    border: none;
   }
 </style>

@@ -10,7 +10,14 @@ export default new Vuex.Store({
     userInfo: {
       username: '',
       uid: '',
-      name: ''
+      name: '',
+      type: ''
+    },
+    qInfo: {
+      qTitle: '',
+      qContent: '',
+      qTime: '',
+      qTopic: []
     }
   },
   mutations: {
@@ -23,12 +30,24 @@ export default new Vuex.Store({
       // state.isLogin = status
     },
     uInfo (state, info) {
-      state.token = info.mb_token
-      state.uid = info.userid
-      state.uname = info.username
-      state.vinfo.vbank = info.vbank
-      state.vinfo.vcompany = info.vcompany
-      state.vinfo.vtruename = info.vtruename
+      state.userInfo.username = info.username
+      state.userInfo.uid = info.uid
+      state.userInfo.name = info.name
+    },
+    token (state, token) {
+      state.token = token
+    },
+    setQTitle (state, title) {
+      state.qInfo.qTitle = title
+    },
+    setQContent (state, content) {
+      state.qInfo.qContent = content
+    },
+    setQTime (state, time) {
+      state.qInfo.qTime = time
+    },
+    setQTopic (state, topic) {
+      state.qInfo.qTopic = topic
     }
   },
   actions: {
@@ -57,10 +76,13 @@ export default new Vuex.Store({
       return state.version
     },
     uid (state) {
-      return state.uid
+      return state.userInfo.uid
     },
     username (state) {
-      return state.uname
+      return state.userInfo.username
+    },
+    qInfo (state) {
+      return state.qInfo
     }
   }
 })

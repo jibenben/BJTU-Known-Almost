@@ -5,11 +5,11 @@
         <span @click="cancel()" class="glyphicon glyphicon-menu-left"></span>
       </div>
       <div style="float: right;" class="menu">
-        <router-link to="/ask/topic">下一步</router-link>
+        <span @click="setContent()">下一步</span>
       </div>
     </div>
     <div>
-      <textarea placeholder="请填写问题相关描述信息（选填）" class="form-control" rows="10"></textarea>
+      <textarea placeholder="请填写问题相关描述信息（选填）" class="form-control" rows="10" v-model="content"></textarea>
     </div>
   </div>
 </template>
@@ -31,12 +31,33 @@
 
 
 <script>
+  import { mapGetters, mapMutations } from 'vuex'
   export default {
     name: 'askDetail',
     methods: {
+      ...mapMutations([
+        'setQContent'
+      ]),
       cancel () {
         window.history.back()
+      },
+      setContent () {
+        this.setQContent(this.content)
+        this.$router.push('/ask/topic')
       }
+    },
+    data () {
+      return {
+        content: ''
+      }
+    },
+    mounted: function () {
+      this.content = this.qInfo.qContent
+    },
+    computed: {
+      ...mapGetters([
+        'qInfo'
+      ])
     }
   }
 </script>
