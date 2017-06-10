@@ -35,4 +35,29 @@ from user,answer ,user_answer where
         $post_answer->add($pa);
         $user_answer ->add($ua);
     }
+
+    //插入点赞(取消)回答功能
+    function like($uid,$anid,$flag){
+        $list =M("User_like_answer");
+        $data['flag'] =$flag;
+        $list_Answer=M("Answer");
+        $array = $list->where("uid = $uid and anid =$anid") ->find();
+        $anray_Answer =$list_Answer->where("id= $anid") ->find();
+        if($array==null){
+            $data['uid'] = $uid;
+            $data['anid'] =$anid;
+            $list->add($data);
+            $data_answer['likeNumber']=$anray_Answer['likeNumber']+1;
+            $list_Answer->where("id = $anid")->save($data_answer);
+        }else{
+            $list->where("uid = $uid and anid =$anid")->save($data);
+            if($flag==0){
+                $data_answer['likeNumber']=$anray_Answer['likeNumber']-1;
+                $list_Answer->where("id = $anid")->save($data_answer);
+            }else{
+                $data_answer['likeNumber']=$anray_Answer['likeNumber']+1;
+                $list_Answer->where("id = $anid")->save($data_answer);
+            }
+        }
+    }
 }

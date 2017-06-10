@@ -33,4 +33,28 @@ class CommentModel extends  Model
         $answer_comment->add($anco);
         $user_comment ->add($uco);
     }
+    //添加点赞取消点赞功能
+    function like($uid,$coid,$flag){
+        $list =M("User_like_comment");
+        $data['flag'] =$flag;
+        $list_Comment=M("Comment");
+        $array = $list->where("uid = $uid and anid =$coid") ->find();
+        $array_Comment =$list_Comment->where("id= $coid") ->find();
+        if($array==null){
+            $data['uid'] = $uid;
+            $data['coid'] =$coid;
+            $list->add($data);
+            $data_Comment['likeNumber']=$array_Comment['likeNumber']+1;
+            $list_Comment->where("id = $coid")->save($data_Comment);
+        }else{
+            $list->where("uid = $uid and anid =$coid")->save($data);
+            if($flag==0){
+                $data_Comment['likeNumber']=$array_Comment['likeNumber']-1;
+                $list_Comment->where("id = $coid")->save($data_Comment);
+            }else{
+                $data_Comment['likeNumber']=$array_Comment['likeNumber']+1;
+                $list_Comment->where("id = $coid")->save($data_Comment);
+            }
+        }
+    }
 }

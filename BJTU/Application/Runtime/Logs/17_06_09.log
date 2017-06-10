@@ -1,0 +1,176 @@
+[ 2017-06-09T21:30:07+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.010024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.019079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.007517s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007585s ]
+
+[ 2017-06-09T21:30:20+08:00 ] ::1 /bjtu/index.php/home/User/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000998s ]
+
+[ 2017-06-09T21:30:50+08:00 ] ::1 /bjtu/index.php/home/User/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000818s ]
+
+[ 2017-06-09T21:30:54+08:00 ] ::1 /bjtu/index.php/home/User/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000856s ]
+
+[ 2017-06-09T21:33:50+08:00 ] ::1 /bjtu/index.php/home/User/sendMail
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000965s ]
+
+[ 2017-06-09T21:36:12+08:00 ] ::1 /bjtu/index.php/home/User/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000982s ]
+
+[ 2017-06-09T21:36:14+08:00 ] ::1 /bjtu/index.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001208s ]
+SQL: SHOW COLUMNS FROM `combine` [ RunTime:0.023489s ]
+ERR: 1146:Table 'bjtu.combine' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `combine`
+NOTIC: [2048] Declaration of Home\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) J:\phpStudy\WWW\BJTU\Application\Home\Model\PostModel.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.025374s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.015744s ]
+NOTIC: [2048] Declaration of Home\Model\AnswerModel::save() should be compatible with Think\Model::save($data = '', $options = Array) J:\phpStudy\WWW\BJTU\Application\Home\Model\AnswerModel.class.php 第 38 行.
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.015036s ]
+SQL: select  id pid,createtime,followNumber,title,type from post; [ RunTime:0.000500s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =4 [ RunTime:0.025145s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.005570s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =1 ) LIMIT 1   [ RunTime:0.000237s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =5 [ RunTime:0.000319s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =3 ) LIMIT 1   [ RunTime:0.000148s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =6 [ RunTime:0.000241s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =2 ) LIMIT 1   [ RunTime:0.000142s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =12 [ RunTime:0.000249s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =5 ) LIMIT 1   [ RunTime:0.000139s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000689s ]
+
+[ 2017-06-09T21:36:16+08:00 ] ::1 /bjtu/index.php/home/User/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+
+[ 2017-06-09T21:38:09+08:00 ] ::1 /bjtu/index.php/home/User/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000617s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.120685s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.120801s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.006064s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006108s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000576s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000621s ]
+
+[ 2017-06-09T22:29:51+08:00 ] ::1 /bjtu/index.php/home/User/pwd
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000457s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000437s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000480s ]
+
+[ 2017-06-09T22:40:54+08:00 ] ::1 /bjtu/index.php/home/User/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.041447s ]
+NOTIC: [8] Undefined index: mail J:\phpStudy\WWW\BJTU\Application\Home\Controller\UserController.class.php 第 65 行.
+SQL: SHOW COLUMNS FROM `mail_pwd` [ RunTime:0.020399s ]
+SQL: SELECT * FROM `mail_pwd` WHERE ( mail = '' ) LIMIT 1   [ RunTime:0.000328s ]
+SQL: INSERT INTO `mail_pwd` (`pwd`) VALUES ('861d89') [ RunTime:0.000910s ]
+NOTIC: [8] Undefined index: mail J:\phpStudy\WWW\BJTU\Application\Home\Controller\UserController.class.php 第 66 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011115s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000662s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000736s ]
+
+[ 2017-06-09T22:40:57+08:00 ] ::1 /bjtu/index.php/home/User/pwd
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001020s ]
+ERR: 非法操作:pwd
+
+[ 2017-06-09T22:41:04+08:00 ] ::1 /bjtu/index.php/home/User/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001068s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.028804s ]
+NOTIC: [8] Undefined index: mail J:\phpStudy\WWW\BJTU\Application\Home\Controller\UserController.class.php 第 65 行.
+SQL: SHOW COLUMNS FROM `mail_pwd` [ RunTime:0.012502s ]
+SQL: SELECT * FROM `mail_pwd` WHERE ( mail = '' ) LIMIT 1   [ RunTime:0.000430s ]
+SQL: UPDATE `mail_pwd` SET `pwd`='434031' WHERE ( mail = '' ) [ RunTime:0.001223s ]
+NOTIC: [8] Undefined index: mail J:\phpStudy\WWW\BJTU\Application\Home\Controller\UserController.class.php 第 66 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012221s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012346s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000625s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000714s ]
+
+[ 2017-06-09T22:41:07+08:00 ] ::1 /bjtu/index.php/home/User/pwd
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000842s ]
+ERR: 非法操作:pwd
+
+[ 2017-06-09T22:41:17+08:00 ] ::1 /bjtu/index.php/home/User/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001012s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.027399s ]
+SQL: SHOW COLUMNS FROM `mail_pwd` [ RunTime:0.018051s ]
+SQL: SELECT * FROM `mail_pwd` WHERE ( mail = '14301144@bjtu.edu.cn' ) LIMIT 1   [ RunTime:0.000536s ]
+SQL: INSERT INTO `mail_pwd` (`pwd`) VALUES ('f4f815') [ RunTime:0.000417s ]
+ERR: 1062:Duplicate entry '' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `mail_pwd` (`pwd`) VALUES ('f4f815')
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009820s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009923s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000406s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001101s ]
+

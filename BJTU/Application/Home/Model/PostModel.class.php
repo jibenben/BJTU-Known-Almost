@@ -31,4 +31,29 @@ class PostModel extends Model
         $User_Post=M("User_post");
         $User_Post->add($UP);
     }
+    //插入帖子关注接口
+    public  function follow_post($uid,$pid,$flag){
+        $list =M("User_follow_post");
+        $data['flag'] =$flag;
+        $list_post=M("Post");
+        $array = $list->where("uid = $uid and pid =$pid") ->find();
+        $array_post =$list_post->where("id= $pid") ->find();
+        if($array==null){
+            $data['uid'] = $uid;
+            $data['pid'] =$pid;
+            $list->add($data);
+            $data_post['likeNumber']=$array_post['likeNumber']+1;
+            $list_post->where("id = $pid")->save($data_post);
+        }else{
+            $list->where("uid = $uid and pid =$pid")->save($data);
+            if($flag==0){
+                $data_post['likeNumber']=$array_post['likeNumber']-1;
+                $list_post->where("id = $pid")->save($data_post);
+            }else{
+                $data_post['likeNumber']=$array_post['likeNumber']+1;
+                $list_post->where("id = $pid")->save($data_post);
+            }
+        }
+    }
+
 }

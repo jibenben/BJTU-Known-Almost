@@ -1,0 +1,73 @@
+[ 2017-06-07T22:35:15+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001145s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010800s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.064815s ]
+ERR: Think\Model:selectByName方法不存在！
+
+[ 2017-06-07T22:35:17+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000825s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.021056s ]
+ERR: Think\Model:selectByName方法不存在！
+
+[ 2017-06-07T22:35:18+08:00 ] ::1 /bjtu/index.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001337s ]
+SQL: SHOW COLUMNS FROM `combine` [ RunTime:0.016207s ]
+ERR: 1146:Table 'bjtu.combine' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `combine`
+NOTIC: [2048] Declaration of Home\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) J:\phpStudy\WWW\BJTU\Application\Home\Model\PostModel.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.049649s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.016479s ]
+NOTIC: [2048] Declaration of Home\Model\AnswerModel::save() should be compatible with Think\Model::save($data = '', $options = Array) J:\phpStudy\WWW\BJTU\Application\Home\Model\AnswerModel.class.php 第 38 行.
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.015694s ]
+SQL: select  id pid,createtime,followNumber,title,type from post; [ RunTime:0.000658s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =4 [ RunTime:0.019173s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.005705s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =1 ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =5 [ RunTime:0.000301s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =3 ) LIMIT 1   [ RunTime:0.000147s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =6 [ RunTime:0.000238s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =2 ) LIMIT 1   [ RunTime:0.000143s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =12 [ RunTime:0.000248s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =5 ) LIMIT 1   [ RunTime:0.000139s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001444s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001500s ]
+
+[ 2017-06-07T22:35:18+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000971s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.019494s ]
+ERR: Think\Model:selectByName方法不存在！
+
+[ 2017-06-07T22:35:20+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.027340s ]
+ERR: Think\Model:selectByName方法不存在！
+
+[ 2017-06-07T22:35:21+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000837s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.027152s ]
+ERR: Think\Model:selectByName方法不存在！
+
