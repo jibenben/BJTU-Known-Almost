@@ -57,12 +57,14 @@ class IndexController extends Controller {
         echo header("Content-type:text/html;charset=utf-8");
         if(!isset($_POST['uid'])||!isset($_POST['topicid'])||!isset($_POST['title']))
             echo "添加帖子失败";
+        else{
         $data['title']=$_POST['title'];
         $data['content']=$_POST['content'];
         $data['type']=$_POST['topicid'];
         $UP['uid'] =$_POST['uid'];
         $post->save($data,$UP);
         echo "添加帖子成功";
+        }
     }
     //查询话题接口
     public function topic(){
@@ -78,12 +80,14 @@ class IndexController extends Controller {
         echo header("Content-type:text/html;charset=utf-8");
         if(!isset($_POST['uid'])||!isset($_POST['pid']))
             echo "回答失败";
+        else{
         $data['content'] =$_POST['content'];
         $pa['pid'] = $_POST['pid'];
         $ua['uid'] = $_POST['uid'];
         $answer = new \Home\Model\AnswerModel();
         $answer ->save($data, $pa, $ua);
             echo "回答成功";
+        }
     }
     //插入评论接口
     public function comment(){
@@ -91,11 +95,13 @@ class IndexController extends Controller {
         echo header("Content-type:text/html;charset=utf-8");
         if(!isset($_POST['uid'])||!isset($_POST['anid']))
             echo "评论失败";
+        else{
         $data['content'] =$_POST['content'];
         $anco['anid'] = $_POST['anid'];
         $uco['uid'] = $_POST['uid'];
         $comment = new \Home\Model\CommentModel();
         $comment ->save($data,$uco,$anco);
         echo "评论成功";
+        }
     }
 }

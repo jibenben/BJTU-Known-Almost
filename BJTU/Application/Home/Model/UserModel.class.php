@@ -12,7 +12,8 @@ class UserModel extends  Model
 {
     //根据用户姓名进行判断登录
     public function selectName($name,$paswd){
-
+        $list=M("user");
+        return $list=$list->where("email ='$name' and password ='$paswd' ")->find();
     }
     //根据用户邮箱进行判断登录
     public function selectEmail($email,$paswd){}

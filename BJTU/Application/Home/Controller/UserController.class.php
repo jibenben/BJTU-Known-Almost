@@ -21,8 +21,8 @@ class UserController  extends Controller
         {
           $arr=array("result" =>"false");
         }else{
-            $arr=array("result"=>"true","id"=>$array[0]['id']);
-            $_SESSION['id'] = $array[0]['id'];
+            $arr=array("result"=>"true","id"=>$array['id']);
+            $_SESSION['id'] = $array['id'];
         }
         echo header("Content-type:text/html;charset=utf-8");
         echo json_encode($arr, JSON_UNESCAPED_UNICODE);
