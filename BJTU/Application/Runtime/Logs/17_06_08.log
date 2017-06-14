@@ -1,0 +1,233 @@
+[ 2017-06-08T08:44:30+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.025713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.044808s ]
+NOTIC: [8] Undefined index: name J:\phpStudy\WWW\BJTU\Application\Home\Controller\UserController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.057984s ]
+ERR: Think\Model:selectByName方法不存在！
+
+[ 2017-06-08T08:45:02+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000989s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001588s ]
+NOTIC: [8] Undefined index: name J:\phpStudy\WWW\BJTU\Application\Home\Controller\UserController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.030764s ]
+ERR: Think\Model:selectByName方法不存在！
+
+[ 2017-06-08T08:45:28+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002067s ]
+NOTIC: [8] Undefined index: name J:\phpStudy\WWW\BJTU\Application\Home\Controller\UserController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.036639s ]
+ERR: Think\Model:selectByName方法不存在！
+
+[ 2017-06-08T08:45:30+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001410s ]
+NOTIC: [8] Undefined index: name J:\phpStudy\WWW\BJTU\Application\Home\Controller\UserController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.027421s ]
+ERR: Think\Model:selectByName方法不存在！
+
+[ 2017-06-08T08:45:32+08:00 ] ::1 /bjtu/index.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000976s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001597s ]
+SQL: SHOW COLUMNS FROM `combine` [ RunTime:0.017106s ]
+ERR: 1146:Table 'bjtu.combine' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `combine`
+NOTIC: [2048] Declaration of Home\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) J:\phpStudy\WWW\BJTU\Application\Home\Model\PostModel.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.041833s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.029502s ]
+NOTIC: [2048] Declaration of Home\Model\AnswerModel::save() should be compatible with Think\Model::save($data = '', $options = Array) J:\phpStudy\WWW\BJTU\Application\Home\Model\AnswerModel.class.php 第 38 行.
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.031914s ]
+SQL: select  id pid,createtime,followNumber,title,type from post; [ RunTime:0.000989s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =4 [ RunTime:0.025690s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.010767s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =1 ) LIMIT 1   [ RunTime:0.000378s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =5 [ RunTime:0.000529s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =3 ) LIMIT 1   [ RunTime:0.000277s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =6 [ RunTime:0.000434s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =2 ) LIMIT 1   [ RunTime:0.000273s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =12 [ RunTime:0.000454s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =5 ) LIMIT 1   [ RunTime:0.000263s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002198s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002315s ]
+
+[ 2017-06-08T08:47:03+08:00 ] ::1 /bjtu/index.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000989s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001588s ]
+SQL: SHOW COLUMNS FROM `combine` [ RunTime:0.009825s ]
+ERR: 1146:Table 'bjtu.combine' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `combine`
+NOTIC: [2048] Declaration of Home\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) J:\phpStudy\WWW\BJTU\Application\Home\Model\PostModel.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.011219s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.013500s ]
+NOTIC: [2048] Declaration of Home\Model\AnswerModel::save() should be compatible with Think\Model::save($data = '', $options = Array) J:\phpStudy\WWW\BJTU\Application\Home\Model\AnswerModel.class.php 第 38 行.
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.016140s ]
+SQL: select  id pid,createtime,followNumber,title,type from post; [ RunTime:0.000380s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =4 [ RunTime:0.000557s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.006060s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =1 ) LIMIT 1   [ RunTime:0.000286s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =5 [ RunTime:0.000485s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =3 ) LIMIT 1   [ RunTime:0.000253s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =6 [ RunTime:0.000398s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =2 ) LIMIT 1   [ RunTime:0.000246s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =12 [ RunTime:0.000421s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =5 ) LIMIT 1   [ RunTime:0.000235s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001026s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001107s ]
+
+[ 2017-06-08T08:47:10+08:00 ] ::1 /bjtu/index.php/home/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000860s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001428s ]
+ERR: 无法加载控制器:Login
+
+[ 2017-06-08T08:47:18+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000836s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001395s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000856s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000952s ]
+
+[ 2017-06-08T08:48:07+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000994s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001639s ]
+NOTIC: [8] Undefined index: name J:\phpStudy\WWW\BJTU\Application\Home\Controller\UserController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.029928s ]
+ERR: Think\Model:selectByName方法不存在！
+
+[ 2017-06-08T08:49:01+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000830s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001378s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000952s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001040s ]
+
+[ 2017-06-08T08:49:20+08:00 ] ::1 /bjtu/index.php/home/index/index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000970s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001571s ]
+SQL: SHOW COLUMNS FROM `combine` [ RunTime:0.016575s ]
+ERR: 1146:Table 'bjtu.combine' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `combine`
+NOTIC: [2048] Declaration of Home\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) J:\phpStudy\WWW\BJTU\Application\Home\Model\PostModel.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.019398s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.023300s ]
+NOTIC: [2048] Declaration of Home\Model\AnswerModel::save() should be compatible with Think\Model::save($data = '', $options = Array) J:\phpStudy\WWW\BJTU\Application\Home\Model\AnswerModel.class.php 第 38 行.
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.014894s ]
+SQL: select  id pid,createtime,followNumber,title,type from post; [ RunTime:0.000353s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =4 [ RunTime:0.000509s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.005748s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =1 ) LIMIT 1   [ RunTime:0.000299s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =5 [ RunTime:0.000507s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =3 ) LIMIT 1   [ RunTime:0.000280s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =6 [ RunTime:0.000428s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =2 ) LIMIT 1   [ RunTime:0.000276s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =12 [ RunTime:0.000452s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =5 ) LIMIT 1   [ RunTime:0.000264s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001086s ]
+
+[ 2017-06-08T08:49:32+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000809s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001350s ]
+NOTIC: [8] Undefined index: name J:\phpStudy\WWW\BJTU\Application\Home\Controller\UserController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.023781s ]
+ERR: Think\Model:selectByName方法不存在！
+
+[ 2017-06-08T08:52:00+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000973s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001574s ]
+NOTIC: [8] Undefined index: name J:\phpStudy\WWW\BJTU\Application\Home\Controller\UserController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.019662s ]
+ERR: Think\Model:selectByName方法不存在！
+
+[ 2017-06-08T08:53:04+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001456s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001040s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001141s ]
+
+[ 2017-06-08T08:53:37+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001518s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.037363s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001632s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001798s ]
+
+[ 2017-06-08T08:58:11+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001943s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.046715s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010877s ]
+SQL: SELECT * FROM `user` WHERE ( email = '14301144@bjtu.edu.cn' and password = '123456' ) LIMIT 1   [ RunTime:0.000444s ]
+NOTIC: [8] Undefined offset: 0 J:\phpStudy\WWW\BJTU\Application\Home\Controller\UserController.class.php 第 30 行.
+NOTIC: [8] Undefined offset: 0 J:\phpStudy\WWW\BJTU\Application\Home\Controller\UserController.class.php 第 31 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001242s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001343s ]
+
+[ 2017-06-08T12:17:15+08:00 ] ::1 /bjtu/index.php/home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001623s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.038097s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.011079s ]
+SQL: SELECT * FROM `user` WHERE ( email = '14301144@bjtu.edu.cn' and password = '123456' ) LIMIT 1   [ RunTime:0.000735s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001874s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002024s ]
+

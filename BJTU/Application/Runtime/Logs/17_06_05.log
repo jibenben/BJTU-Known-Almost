@@ -1,0 +1,33 @@
+[ 2017-06-05T21:37:43+08:00 ] ::1 /bjtu/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.012449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.022429s ]
+SQL: SHOW COLUMNS FROM `combine` [ RunTime:0.011312s ]
+ERR: 1146:Table 'bjtu.combine' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `combine`
+NOTIC: [2048] Declaration of Home\Model\PostModel::save() should be compatible with Think\Model::save($data = '', $options = Array) J:\phpStudy\WWW\BJTU\Application\Home\Model\PostModel.class.php 第 36 行.
+SQL: SHOW COLUMNS FROM `post` [ RunTime:0.009996s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.009204s ]
+NOTIC: [2048] Declaration of Home\Model\AnswerModel::save() should be compatible with Think\Model::save($data = '', $options = Array) J:\phpStudy\WWW\BJTU\Application\Home\Model\AnswerModel.class.php 第 40 行.
+SQL: SHOW COLUMNS FROM `answer` [ RunTime:0.006243s ]
+SQL: select  id pid,createtime,followNumber,title,type from post; [ RunTime:0.000222s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =4 [ RunTime:0.000384s ]
+SQL: SHOW COLUMNS FROM `topic` [ RunTime:0.003702s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =1 ) LIMIT 1   [ RunTime:0.000266s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =5 [ RunTime:0.000312s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =3 ) LIMIT 1   [ RunTime:0.000162s ]
+SQL: select  answer.content answercontent,commentNumber,likeNumber,answer.id anid,user.name uname 
+                     from post_answer,answer,user ,user_answer
+                     where user.id = user_answer.uid and answer.id =user_answer.anid
+                    and post_answer.anid =answer.id and post_answer.pid =6 [ RunTime:0.000296s ]
+SQL: SELECT * FROM `topic` WHERE ( tid =2 ) LIMIT 1   [ RunTime:0.000162s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001392s ]
+
