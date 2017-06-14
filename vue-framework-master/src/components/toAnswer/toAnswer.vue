@@ -61,22 +61,20 @@
       },
       toAnswer () {
         if (this.answerContent.length !== 0) {
-          let con = window.confirm('确定要提交吗？')
+//          let con = window.confirm('确定要提交吗？')
           let local = this
           let formd = new window.FormData()
-          formd.append('uid', this.uid)
+          formd.append('uid', 1)
           formd.append('content', this.answerContent)
           formd.append('pid', this.pid)
-          if (con) {
-            this.$http.post('http://139.199.5.64/bjtu/index.php/home/index/answer', formd).then((response) => {
-              console.log(response)
-              if (response.data === 1) {
-                window.alert('回答成功！')
-                local.$router.push({ name: 'question', params: { id: local.pid } })
-              }
-            }, (response) => {
-            })
-          }
+          this.$http.post('http://139.199.5.64/bjtu/index.php/home/index/answer', formd).then((response) => {
+            console.log(response)
+            if (response.data === 1) {
+              window.alert('回答成功！')
+              local.$router.push({name: 'question', params: {id: local.pid}})
+            }
+          }, (response) => {
+          })
         }
       }
     },

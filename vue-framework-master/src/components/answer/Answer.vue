@@ -228,7 +228,7 @@
               console.log(response)
               if (response.data === 1) {
                 local.answerData.likeNumber--
-                window.alert('取消点赞成功！')
+//                window.alert('取消点赞成功！')
                 local.isLike = false
               }
             }, (response) => {
@@ -240,7 +240,7 @@
               if (response.data === 1) {
                 local.answerData.likeNumber++
                 local.isLike = true
-                window.alert('点赞成功！')
+//                window.alert('点赞成功！')
               }
             }, (response) => {
             })

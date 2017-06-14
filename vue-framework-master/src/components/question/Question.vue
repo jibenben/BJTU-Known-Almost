@@ -45,12 +45,14 @@
           <span class="answer-btn">邀请回答</span>
         </div>
         <div class="col-xs-6 desc-answer">
-            <span class="answer-btn" @click="addAnswer(qDetail.post[0].pid)">添加回答</span>
+          <span class="answer-btn" @click="addAnswer(qDetail.post[0].pid)">添加回答</span>
         </div>
       </div>
       <div class="row count-div">
         <div class="col-xs-6 answer-count">
-          <span>{{ qDetail.answer.length }} 个回答</span>
+          <span>{{
+            qDetail.answer.length === null ?
+              '0' : qDetail.answer.length }} 个回答</span>
         </div>
       </div>
     </div>
@@ -97,8 +99,8 @@
       let formd = new window.FormData()
       formd.append('pid', this.pid)
       this.$http.post('http://139.199.5.64/BJTU/index.php/home/index/detail', formd).then((response) => {
+        console.log(response)
         local.qDetail = response.data
-        console.log(local.qDetail)
       }, (response) => {
       })
     },
@@ -127,9 +129,9 @@
       },
       addAnswer (pid) {
         if (this.uid !== '') {
-          this.$router.push({ name: 'toAnswer', params: { id: pid } })
+          this.$router.push({name: 'toAnswer', params: {id: pid}})
         } else {
-          window.alert('未登录！请先登录！')
+//          window.alert('未登录！请先登录！')
           this.$router.push('/login')
         }
       }
@@ -221,7 +223,8 @@
   }
 
   .count-div {
-    padding-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: #eeeeee;
   }
 

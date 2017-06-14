@@ -128,11 +128,11 @@
         formd.append('topicid', this.topicToAdd)
         formd.append('content', this.qInfo.qContent)
         formd.append('title', this.qInfo.qTitle)
-        formd.append('uid', this.uid)
+        formd.append('uid', 1)
 
         this.$http.post('http://139.199.5.64/bjtu/index.php/home/index/post', formd).then((response) => {
           console.log(response)
-          window.alert(response.data)
+//          window.alert(response.data)
           local.$router.push('/')
         }, (response) => {
         })

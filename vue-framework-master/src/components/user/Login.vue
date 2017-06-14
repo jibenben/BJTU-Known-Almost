@@ -53,11 +53,11 @@
             local.setUid(result.id)
             local.setUserEmail(local.uname)
             local.setUserType(result.type)
-            window.alert('登录成功！')
+//            window.alert('登录成功！')
 //            local.$router.back()
             local.$router.push('/')
           } else {
-            window.alert('用户名或密码错误！')
+//            window.alert('用户名或密码错误！')
           }
 //          console.log(response)
         }, (response) => {
