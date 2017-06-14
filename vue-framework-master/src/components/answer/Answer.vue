@@ -7,7 +7,7 @@
             <span @click="back()" class="glyphicon glyphicon-menu-left"></span>
           </div>
           <div class="col-xs-8 headline">
-            <span>{{ questionTitle }}</span>
+            <span>{{ answerData.title }}</span>
           </div>
           <div class="col-xs-2">
           </div>
@@ -38,7 +38,7 @@
       <nav class="navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
           <div class="row bottom-btn">
-            <div class="col-xs-3">
+            <div class="col-xs-3" @click="like()">
               <div>
                 <span class="glyphicon glyphicon-thumbs-up"></span>
               </div>
@@ -63,14 +63,14 @@
               </div>
             </div>
             <div class="col-xs-3">
-              <div>
-                <span class="glyphicon glyphicon-comment"></span>
-              </div>
-              <div>
-                <router-link :to="{ name: 'comment', params: { id: anid }}">
+              <router-link :to="{ name: 'comment', params: { id: answerData.anid }}">
+                <div>
+                  <span class="glyphicon glyphicon-comment"></span>
+                </div>
+                <div>
                   <span>评论({{ answerData.CommentNumber }})</span>
-                </router-link>
-              </div>
+                </div>
+              </router-link>
             </div>
           </div>
         </div>
@@ -163,28 +163,38 @@
 </style>
 
 <script>
+  import { mapGetters } from 'vuex'
   export default {
     props: ['answerId'],
     data () {
       return {
         anid: '',
         answerData: '',
-        questionTitle: '',
-        followText: '关注'
+        followText: '关注',
+        isLike: false
       }
     },
     name: 'answer',
     mounted: function () {
-      this.questionTitle = this.$route.params.questionTitle
       this.anid = this.$route.params.id
       let local = this
       let formd = new window.FormData()
       formd.append('anid', this.anid)
       this.$http.post('http://139.199.5.64/bjtu/index.php/home/index/displayAnswer', formd).then((response) => {
-        console.log(response)
+//        console.log(response)
         local.answerData = response.data[0]
       }, (response) => {
       })
+      console.log('uid=' + this.uid)
+      if (this.uid !== '') {
+        let fdata = new window.FormData()
+        fdata.append('anid', this.anid)
+        fdata.append('uid', this.uid)
+        this.$http.post('http://139.199.5.64/bjtu/index.php/home/index/isLikeAnswer', formd).then((response) => {
+          local.isLike = response.data !== 0
+        }, (response) => {
+        })
+      }
     },
     methods: {
       back () {
@@ -205,7 +215,43 @@
           this.followText = '已关注'
           this.isFollowed = true
         }
+      },
+      like () {
+        if (this.uid !== '') {
+          let local = this
+          let formd = new window.FormData()
+          formd.append('uid', 1)
+          formd.append('anid', this.anid)
+          if (this.isLike) {
+            formd.append('flag', 2)
+            this.$http.post('http://139.199.5.64/bjtu/index.php/home/index/likeAnswer', formd).then((response) => {
+              console.log(response)
+              if (response.data === 1) {
+                local.answerData.likeNumber--
+                window.alert('取消点赞成功！')
+                local.isLike = false
+              }
+            }, (response) => {
+            })
+          } else {
+            formd.append('flag', 1)
+            this.$http.post('http://139.199.5.64/bjtu/index.php/home/index/likeAnswer', formd).then((response) => {
+              console.log(response)
+              if (response.data === 1) {
+                local.answerData.likeNumber++
+                local.isLike = true
+                window.alert('点赞成功！')
+              }
+            }, (response) => {
+            })
+          }
+        }
       }
+    },
+    computed: {
+      ...mapGetters([
+        'uid'
+      ])
     }
   }
 </script>

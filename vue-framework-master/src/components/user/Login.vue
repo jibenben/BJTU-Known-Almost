@@ -26,28 +26,48 @@
 
 <script>
   import CommonHeader from '../header/CommonHeader'
+  import { mapGetters, mapMutations } from 'vuex'
   export default {
     components: {CommonHeader},
     name: 'login',
     data () {
       return {
         uname: '',
-        passwd: '',
-        result: ''
+        passwd: ''
       }
     },
     methods: {
+      ...mapMutations([
+        'setUid',
+        'setUserType',
+        'setUserEmail'
+      ]),
       login () {
         let formd = new window.FormData()
         let local = this
         formd.append('name', this.uname)
         formd.append('password', this.passwd)
-        this.$http.post('http://139.199.5.64/BJTU/index.php/home/index/user/login', formd).then((response) => {
-          local.result = response.data
-          console.log(response)
+        this.$http.post('http://139.199.5.64/BJTU/index.php/home/user/login', formd).then((response) => {
+          let result = response.data
+          if (result.result) {
+            local.setUid(result.id)
+            local.setUserEmail(local.uname)
+            local.setUserType(result.type)
+            window.alert('登录成功！')
+//            local.$router.back()
+            local.$router.push('/')
+          } else {
+            window.alert('用户名或密码错误！')
+          }
+//          console.log(response)
         }, (response) => {
         })
       }
+    },
+    computed: {
+      ...mapGetters([
+        'uInfo'
+      ])
     }
   }
 </script>

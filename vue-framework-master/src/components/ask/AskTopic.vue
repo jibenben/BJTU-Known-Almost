@@ -8,7 +8,7 @@
         <label class="headline">请至少添加一个话题</label>
       </div>
       <div class="col-xs-3">
-        <a style="float: right;">发布</a>
+        <a style="float: right;" @click="publish()">发布</a>
       </div>
     </div>
     <div class="block">
@@ -25,7 +25,7 @@
         </div>
         <div class="col-xs-3" style="padding-left: 0; padding-top: 3px">
           <button @click="addTopic(index)" class="btn btn-default" :class="{ 'btn-added': t.isAdded }">
-            {{ '添加' }}
+            {{ t.isAdded ? '已添加' : '添加'}}
           </button>
         </div>
       </div>
@@ -90,7 +90,8 @@
       return {
         topics: [],
         topicToAdd: [],
-        btnStatus: ''
+        btnStatus: '',
+        info: ''
       }
     },
     methods: {
@@ -105,17 +106,42 @@
         window.history.back()
       },
       addTopic (index) {
-        this.topics[index].isAdded = true
-        this.topicToAdd.push(this.topics[index].tid)
-        console.log(this.topics)
+        if (!this.topics[index].isAdded) {
+          this.topics[index].isAdded = true
+          this.$set(this.topics, index, this.topics[index])
+        } else {
+          this.topics[index].isAdded = false
+          this.$set(this.topics, index, this.topics[index])
+        }
       },
       setTopic () {
         this.setQTopic(this.topics)
+      },
+      publish () {
+        for (let i = 0; i < this.topics.length; i++) {
+          if (this.topics[i].isAdded) {
+            this.topicToAdd.push(this.topics[i].tid)
+          }
+        }
+        let formd = new window.FormData()
+        let local = this
+        formd.append('topicid', this.topicToAdd)
+        formd.append('content', this.qInfo.qContent)
+        formd.append('title', this.qInfo.qTitle)
+        formd.append('uid', this.uid)
+
+        this.$http.post('http://139.199.5.64/bjtu/index.php/home/index/post', formd).then((response) => {
+          console.log(response)
+          window.alert(response.data)
+          local.$router.push('/')
+        }, (response) => {
+        })
       }
     },
     computed: {
       ...mapGetters([
-        'qInfo'
+        'qInfo',
+        'uid'
       ])
     },
     mounted: function () {

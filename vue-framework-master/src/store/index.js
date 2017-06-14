@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     token: '',
     userInfo: {
+      email: '',
       username: '',
       uid: '',
       name: '',
@@ -29,12 +30,21 @@ export default new Vuex.Store({
       utils.setCookie('isLogin', 'true')
       // state.isLogin = status
     },
-    uInfo (state, info) {
+    setUserInfo (state, info) {
       state.userInfo.username = info.username
       state.userInfo.uid = info.uid
       state.userInfo.name = info.name
     },
-    token (state, token) {
+    setUid (state, uid) {
+      state.userInfo.uid = uid
+    },
+    setUserEmail (state, email) {
+      state.userInfo.email = email
+    },
+    setUserType (state, type) {
+      state.userInfo.type = type
+    },
+    setToken (state, token) {
       state.token = token
     },
     setQTitle (state, title) {
@@ -83,6 +93,9 @@ export default new Vuex.Store({
     },
     qInfo (state) {
       return state.qInfo
+    },
+    uInfo (state) {
+      return state.userInfo
     }
   }
 })

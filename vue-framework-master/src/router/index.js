@@ -65,7 +65,7 @@ export default new VueRouter({
       component: AskTopic
     },
     {
-      path: '/toAnswer',
+      path: '/toAnswer/:id',
       name: 'toAnswer',
       component: ToAnswer
     }

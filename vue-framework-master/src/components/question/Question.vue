@@ -33,7 +33,7 @@
           <span>{{ qDetail.post[0].uname }} 提问</span>
         </div>
         <div class="col-xs-4">
-          <span>{{ qDetail.post[0].postcreatetime }}</span>
+          <span>{{ this.getFormatTime(qDetail.post[0].postcreatetime) }}</span>
         </div>
         <div class="col-xs-4">
           <button @click="follow()" class="btn" :class="{ followed: isFollowed, noFollow: !isFollowed}">关注
@@ -45,9 +45,7 @@
           <span class="answer-btn">邀请回答</span>
         </div>
         <div class="col-xs-6 desc-answer">
-          <router-link to="/toAnswer">
-            <span class="answer-btn">添加回答</span>
-          </router-link>
+            <span class="answer-btn" @click="addAnswer(qDetail.post[0].pid)">添加回答</span>
         </div>
       </div>
       <div class="row count-div">
@@ -67,7 +65,11 @@
         </div>
       </div>
       <div>
-        <router-link to="/answer/12343">{{ a.answercontent }}</router-link>
+        <router-link :to="{ name: 'answer', params: { id: a.anid, questionTitle: qDetail.post[0].posttitle }}">
+          <p>
+            {{ a.answercontent }}
+          </p>
+        </router-link>
       </div>
 
       <div class="row answer-tail">
@@ -86,6 +88,7 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
   export default {
     name: 'question',
     mounted: function () {
@@ -94,8 +97,8 @@
       let formd = new window.FormData()
       formd.append('pid', this.pid)
       this.$http.post('http://139.199.5.64/BJTU/index.php/home/index/detail', formd).then((response) => {
-        console.log(response)
         local.qDetail = response.data
+        console.log(local.qDetail)
       }, (response) => {
       })
     },
@@ -117,7 +120,24 @@
       },
       back () {
         window.history.back()
+      },
+      getFormatTime (time) {
+        let date = new Date(time)
+        return date.getFullYear() + '年 ' + date.getMonth() + '月 ' + date.getDay() + '日'
+      },
+      addAnswer (pid) {
+        if (this.uid !== '') {
+          this.$router.push({ name: 'toAnswer', params: { id: pid } })
+        } else {
+          window.alert('未登录！请先登录！')
+          this.$router.push('/login')
+        }
       }
+    },
+    computed: {
+      ...mapGetters([
+        'uid'
+      ])
     }
   }
 </script>
@@ -161,6 +181,8 @@
   .title {
     font-weight: bold;
     font-size: 18px;
+    line-height: 30px;
+    color: #000;
   }
 
   .desc-tail {
@@ -221,13 +243,6 @@
   .answer-author {
     line-height: 30px;
     white-space: nowrap;
-  }
-
-  .title {
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 30px;
-    color: #000;
   }
 
   .answer-tail {
